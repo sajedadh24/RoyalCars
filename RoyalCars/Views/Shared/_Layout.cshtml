@@ -91,21 +91,16 @@
                         <a asp-action="Service" asp-controller="Home" class="nav-item nav-link">Service</a>
                         @if (signInManager.IsSignedIn(User))
                         {
-                            if (User.IsInRole("Admin"))
+                            if (User.IsInRole("Admin") || User.IsInRole("Company") )
                             {
-                                <div class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown"> @Context.Session.GetString("user") </a>
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="dropdown-item">Dashboard </a>
-                                        <a asp-controller="Account" asp-action="Logout" class="dropdown-item">Logout</a>
-                                    </div>
-                                </div>
+                                <a asp-area="Admin" asp-controller="Dashboard" asp-action="Index" class="nav-item nav-link">Dashboard </a>
+                              
                             }
-                            if (User.IsInRole("Company"))
+                            else
                             {
-                                <a asp-controller="Reserves" asp-action="Rent" class="dropdown-item">My Rent </a>
-
+                                <a  asp-controller="Reserve" asp-action="Index" class="nav-item nav-link">Rent </a>
                             }
+                      
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown"> @Context.Session.GetString("user") </a>
                                 <div class="dropdown-menu rounded-0 m-0">
