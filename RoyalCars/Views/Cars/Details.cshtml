@@ -1,0 +1,75 @@
+﻿@model RoyalCars.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarModel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarModel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarTyp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarTyp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ReserveCost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ReserveCost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarDistance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarDistance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OtherPerties)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OtherPerties)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Img)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Img)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarDescribe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarDescribe)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Company.CompanyId)
+        </dd>
+     
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CarId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,46 @@
+﻿@model RoyalCars.Models.CompanyAd
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/_ViewImports.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>CompanyAd</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AdTitle" class="control-label"></label>
+                <input asp-for="AdTitle" class="form-control" />
+                <span asp-validation-for="AdTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdSubTitle" class="control-label"></label>
+                <input asp-for="AdSubTitle" class="form-control" />
+                <span asp-validation-for="AdSubTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdDescribe" class="control-label"></label>
+                <input asp-for="AdDescribe" class="form-control" />
+                <span asp-validation-for="AdDescribe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <input asp-for="CompanyId" class="form-control" />
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

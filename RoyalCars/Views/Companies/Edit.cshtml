@@ -1,0 +1,84 @@
+﻿@model RoyalCars.Models.Company
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CompanyId" />
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mobileNumber1" class="control-label"></label>
+                <input asp-for="mobileNumber1" class="form-control" />
+                <span asp-validation-for="mobileNumber1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacebookURL" class="control-label"></label>
+                <input asp-for="FacebookURL" class="form-control" />
+                <span asp-validation-for="FacebookURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TwitterURL" class="control-label"></label>
+                <input asp-for="TwitterURL" class="form-control" />
+                <span asp-validation-for="TwitterURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstagramURL" class="control-label"></label>
+                <input asp-for="InstagramURL" class="form-control" />
+                <span asp-validation-for="InstagramURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img" class="control-label"></label>
+                <input asp-for="Img" class="form-control" />
+                <span asp-validation-for="Img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyLocation" class="control-label"></label>
+                <input asp-for="CompanyLocation" class="form-control" />
+                <span asp-validation-for="CompanyLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MembershipFee" class="control-label"></label>
+                <input asp-for="MembershipFee" class="form-control" />
+                <span asp-validation-for="MembershipFee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

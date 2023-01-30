@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Company>
+<!-- HomeIndex -->
+<!-- Car booking companies -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <h1 class="display-1 text-primary text-center">00</h1>
+        <h1 class="display-4 text-uppercase text-center mb-5">
+            CAR RENT COMPANIES
+        </h1>
+        <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+            @foreach (var item in Model)
+            {
+            <div class="team-item">
+                <img class="img-fluid w-100" src="@Url.Content(item.Img)" alt="">
+                <div class="position-relative py-4">
+                    <h4 class="text-uppercase">@item.CompanyName</h4>
+                    <p class="m-0"></p>
+                    <div class="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
+                        <a class="btn btn-lg btn-primary btn-lg-square mx-1" @item.TwitterURL><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mx-1" @item.FacebookURL><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-lg btn-primary btn-lg-square mx-1" @item.InstagramURL><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <a asp-action="CarCompany" asp-controller="Cars" asp-route-id="@item.CompanyId" class="btn btn-primary py-md-3 px-md-5 mt-2">More</a>
+                </div>
+
+            </div>
+            }
+
+
+        </div>
+    </div>
+</div>
+<!-- Car booking companies -->

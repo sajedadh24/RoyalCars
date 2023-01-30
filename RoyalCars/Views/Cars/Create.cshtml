@@ -1,0 +1,71 @@
+﻿@model RoyalCars.Models.CarViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+
+    <h1>Create</h1>
+
+    <h4>Car</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CarName" class="control-label"></label>
+                    <input asp-for="CarName" class="form-control" />
+                    <span asp-validation-for="CarName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarModel" class="control-label"></label>
+                    <input asp-for="CarModel" class="form-control" />
+                    <span asp-validation-for="CarModel" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarTyp" class="control-label"></label>
+                    <input asp-for="CarTyp" class="form-control" />
+                    <span asp-validation-for="CarTyp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReserveCost" class="control-label"></label>
+                    <input asp-for="ReserveCost" class="form-control" />
+                    <span asp-validation-for="ReserveCost" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CarDistance" class="control-label"></label>
+                    <input asp-for="CarDistance" class="form-control" />
+                    <span asp-validation-for="CarDistance" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OtherPerties" class="control-label"></label>
+                    <input asp-for="OtherPerties" class="form-control" />
+                    <span asp-validation-for="OtherPerties" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Img" class="control-label"></label>
+                    <input asp-for="Img" class="form-control" />
+                    <span asp-validation-for="Img" class="text-danger"></span>
+                </div>
+           
+                <div class="form-group">
+                    <label asp-for="CompanyId" class="control-label"></label>
+                    <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
+                    <span asp-validation-for="CompanyId" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+

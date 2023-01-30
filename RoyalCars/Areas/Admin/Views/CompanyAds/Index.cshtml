@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RoyalCars.Models.CompanyAd>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/_ViewImports.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdSubTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdDescribe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdSubTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdDescribe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompanyAdId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CompanyAdId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CompanyAdId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Advertisement>
+    <!-- Banner Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row mx-0">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-6 px-0">
+                        <div class="px-5 bg-secondary d-flex align-items-center justify-content-between" style="height: 350px;">
+                            <img class="img-fluid flex-shrink-0 ml-n5 w-50 mr-4" src="@Url.Content(item.Img)" alt="">
+                            <div class="text-right">
+                                <h3 class="text-uppercase text-light mb-3">@item.AdvertisementTitle</h3>
+                                <p class="mb-4">@item.AdDescribe</p>
+                                @*<a  asp-action="CarCompany" asp-controller="Cars" asp-route-id="" class="btn btn-primary py-2 px-4">Start Now</a>*@
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Banner End -->

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+@{
+    ViewData["Title"] = "RolesList";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>RolesList</h1>
+<hr />
+ @foreach (var role in Model)
+    {
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    ID: @role.Id
+                </div>
+            </div>
+            
+            <div class="card-body">
+               <h2 class="accordion-body" > @role.Name</h2>
+            </div>
+            <hr />
+            <div class="card-footer">
+                <a asp-action="EditRole" asp-route-id="@role.Id" asp-controller="Roles" class="btn btn-primary">Edit</a>
+                <a asp-action="DeleteRole" asp-route-id="@role.Id" asp-controller="Roles" class="btn btn-primary">Delete</a>
+            </div>
+        </div>
+    }
+
+    <div class="alert-dismissible">
+        No Roles In this list click here
+        <a asp-action="CreateRole" asp-controller="Roles" class="btn btn-primary">Create</a>
+    </div>
+    <div>
+        <a asp-action="Index" asp-controller="Dashboard" class="btn btn-primary">Back to Dashboard</a>
+    </div>

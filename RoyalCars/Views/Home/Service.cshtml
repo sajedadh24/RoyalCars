@@ -1,0 +1,51 @@
+﻿@model RoyalCars.Models.ViewData.RoyalViewModel
+
+@{
+    ViewData["Title"] = "Service";
+}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+    <h1 class="display-3 text-uppercase text-white mb-3">Service</h1>
+    <div class="d-inline-flex text-white">
+        <h6 class="text-uppercase m-0"><a class="text-white" asp-action="Index" asp-controller="Home">Home</a></h6>
+        <h6 class="text-body m-0 px-3">/</h6>
+        <h6 class="text-uppercase text-body m-0">Service</h6>
+    </div>
+</div>
+<!-- Page Header Start -->
+
+@await Component.InvokeAsync("Service")
+<div class="container-fluid pb-5">
+    <div class="container pb-5">
+        <h2 class="mb-4">Find Your Car</h2>
+        <div class="owl-carousel related-carousel position-relative" style="padding: 0 30px;">
+            <div class="rent-item">
+                @foreach (var item in Model.Cars.OrderByDescending(f=>f.CreationDate).Take(9))
+                {
+                    <img class="img-fluid mb-4" src="@Url.Content(item.Img)" alt="">
+                    <h4 class="text-uppercase mb-4">@item.CarName</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>@item.CarModel</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span> @item.CarTyp</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>@item.CarDistance</span>
+                        </div>
+                    </div>
+                    <a asp-action="CarDetatl" asp-controller="Home" asp-route-id="@item.CarId"  class="btn btn-primary px-3">@item.ReserveCost</a>
+
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("Advertisement")

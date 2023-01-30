@@ -1,0 +1,253 @@
+﻿@model IEnumerable<RoyalCars.Models.Car>
+
+@{
+    ViewData["Title"] = "Index1";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index1</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarTyp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReserveCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDistance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherPerties)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarDescribe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StaData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.IsActive == true)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarModel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarTyp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReserveCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarDistance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OtherPerties)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Img)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CarDescribe)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StaData)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndData)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Company.CompanyId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsDeleted)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CarId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CarId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CarId">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+</table>
+<!-- table section -->
+<div>
+    <div class="white_shd full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Dark Striped Table</h2>
+            </div>
+        </div>
+        <div class="table_section padding_infor_info">
+            <div class="table-responsive-sm">
+                <table class="table table-dark table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CarName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CarModel)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CarTyp)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ReserveCost)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CarDistance)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.OtherPerties)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Img)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CarDescribe)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.StaData)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EndData)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Company)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreationDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsActive)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IsDeleted)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.IsActive == true)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CarName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CarModel)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CarTyp)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ReserveCost)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CarDistance)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OtherPerties)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Img)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CarDescribe)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StaData)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndData)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UserId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Company.CompanyId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreationDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsActive)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsDeleted)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.CarId" class="btn btn-outline-light">Edit</a>
+                                        <a asp-action="Details" asp-route-id="@item.CarId" class="btn btn-outline-light">Details</a>
+                                        <a asp-action="Delete" asp-route-id="@item.CarId" class="btn btn-outline-light">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- table section -->
