@@ -129,7 +129,7 @@ namespace RoyalCars.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,  Car car)
+        public async Task<IActionResult> Edit(int id,  CarViewModel car)
         {
             if (id != car.CarId)
             {
@@ -140,6 +140,10 @@ namespace RoyalCars.Controllers
             {
                 try
                 {
+
+                    //var oldCarImageUrl = await _context.Cars.FirstOrDefaultAsync(x => x.CarId == id);
+                    // deleteFile(oldCarImageUrl.Img);
+
                     _context.Update(car);
                     await _context.SaveChangesAsync();
                 }
@@ -220,5 +224,15 @@ namespace RoyalCars.Controllers
             }
             return "\\Uploads\\" + newName;
         }
+
+
+        private void deleteFile(string fileUrl)
+        {
+           
+        }
+
+
+
+
     }
 }
